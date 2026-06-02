@@ -24,3 +24,21 @@ Completed:
 - Project Architecture Design
 
 Status: Planning Phase Completed
+
+## Day 2 Progress
+
+Completed backend environment setup for the Placement Cell Portal project.
+
+Tasks Completed:
+
+* Created backend folder structure
+* Initialized Node.js project
+* Installed Express.js, Mongoose, CORS and Dotenv
+* Configured MongoDB Compass local database
+* Created database connection configuration
+* Configured Express server
+* Successfully connected MongoDB database
+* Verified server functionality using browser
+
+Status:
+Backend Setup and Database Connection Completed Successfully.
