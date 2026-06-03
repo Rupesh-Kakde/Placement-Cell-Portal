@@ -42,3 +42,22 @@ Tasks Completed:
 
 Status:
 Backend Setup and Database Connection Completed Successfully.
+
+## Day 3 Progress
+
+Completed backend API development for the Placement Cell Portal.
+
+Tasks Completed:
+
+* Created Mongoose models
+* Created controllers
+* Created routes
+* Integrated routes with Express server
+* Implemented Student CRUD APIs
+* Implemented Company CRUD APIs
+* Implemented Job CRUD APIs
+* Implemented Application CRUD APIs
+* Tested APIs using Postman
+
+Status:
+Backend CRUD API Development Completed Successfully.
