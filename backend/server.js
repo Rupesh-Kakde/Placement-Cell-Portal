@@ -1,4 +1,5 @@
 
+
 require("dotenv").config();
 
 const express = require("express");
@@ -10,6 +11,7 @@ const studentRoutes = require("./routes/studentRoutes");
 const companyRoutes = require("./routes/companyRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -31,6 +33,8 @@ app.use("/api/companies", companyRoutes);
 app.use("/api/jobs", jobRoutes);
 
 app.use("/api/applications", applicationRoutes);
+
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 

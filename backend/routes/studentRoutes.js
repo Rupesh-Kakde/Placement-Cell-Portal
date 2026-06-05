@@ -1,4 +1,5 @@
 const express = require("express");
+const protect = require("../middleware/auth");
 
 const {
     createStudent,
@@ -10,14 +11,14 @@ const {
 
 const router = express.Router();
 
-router.post("/", createStudent);
+router.post("/", protect, createStudent);
 
-router.get("/", getStudents);
+router.get("/", protect, getStudents);
 
-router.get("/:id", getStudentById);
+router.get("/:id", protect, getStudentById);
 
-router.put("/:id", updateStudent);
+router.put("/:id", protect, updateStudent);
 
-router.delete("/:id", deleteStudent);
+router.delete("/:id", protect, deleteStudent);
 
 module.exports = router;
