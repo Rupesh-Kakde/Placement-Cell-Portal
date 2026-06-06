@@ -79,3 +79,136 @@ Tasks Completed:
 
 Status:
 Frontend UI Development Completed Successfully.
+
+
+# Day 5 – Authentication and Backend Integration
+
+## Objective
+
+Implement user authentication and connect frontend modules with backend APIs.
+
+## Tasks Completed
+
+### Authentication Module
+
+* Created User Registration API
+* Created User Login API
+* Implemented JWT Authentication
+* Added Password Hashing using bcryptjs
+* Added Route Protection Middleware
+
+### Frontend Authentication
+
+* Created Login Page
+* Created Registration Page
+* Implemented Login and Registration Logic
+* Stored JWT Token in Local Storage
+* Stored Logged-in User Information
+
+### Security Features
+
+* Password Hashing
+* Password Verification
+* JWT Token Generation
+* Protected Routes
+
+### Testing
+
+* Tested User Registration
+* Tested User Login
+* Verified JWT Token Generation
+* Verified Protected Route Access
+* Tested Authentication using Postman
+
+## Technologies Used
+
+* Node.js
+* Express.js
+* MongoDB
+* JWT
+* bcryptjs
+* JavaScript
+
+## Status
+
+Authentication Module Successfully Implemented and Tested.
+
+
+# Day 6 – Frontend Integration and Project Completion
+
+## Objective
+
+Connect all frontend modules with backend APIs and complete the Placement Cell Portal.
+
+## Tasks Completed
+
+### Student Module
+
+* Connected Student Form with Backend API
+* Implemented Student Data Storage in MongoDB
+* Displayed Student Records Dynamically
+
+### Company Module
+
+* Connected Company Form with Backend API
+* Implemented Company Data Storage
+* Displayed Company Records Dynamically
+
+### Job Module
+
+* Connected Job Form with Backend API
+* Implemented Job Posting Functionality
+* Displayed Available Jobs Dynamically
+
+### Application Module
+
+* Connected Application Form with Backend API
+* Implemented Application Tracking
+* Stored Application Data in MongoDB
+* Displayed Application Records Dynamically
+
+### Dashboard Integration
+
+* Implemented Dynamic Statistics
+* Displayed Total Students Count
+* Displayed Total Companies Count
+* Displayed Total Jobs Count
+* Displayed Total Applications Count
+
+### Testing
+
+* Tested Complete Frontend and Backend Integration
+* Verified CRUD Operations
+* Verified MongoDB Data Persistence
+* Verified Dashboard Statistics
+* Verified Authentication and Route Protection
+
+## Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+* Node.js
+* Express.js
+* MongoDB
+
+## Project Status
+
+Placement Cell Portal Successfully Completed and Fully Functional.
+
+### Implemented Features
+
+* User Registration
+* User Login
+* JWT Authentication
+* Student Management
+* Company Management
+* Job Management
+* Application Tracking
+* Dashboard Analytics
+* MongoDB Integration
+* Responsive User Interface
+
+## Final Status
+
+Project Ready for Demonstration, GitHub Submission, and OJT Internship Evaluation.

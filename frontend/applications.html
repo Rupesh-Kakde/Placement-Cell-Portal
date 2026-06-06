@@ -1,6 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<div class="form-card">
+
+<h2>Create Application</h2>
+
+<form id="applicationForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Student ID</label>
+<input
+type="text"
+id="studentId"
+placeholder="Enter Student ID"
+required>
+</div>
+
+<div class="form-group">
+<label>Job ID</label>
+<input
+type="text"
+id="jobId"
+placeholder="Enter Job ID"
+required>
+</div>
+
+<div class="form-group">
+<label>Status</label>
+
+<select id="applicationStatus">
+
+<option value="Applied">
+Applied
+</option>
+
+<option value="Shortlisted">
+Shortlisted
+</option>
+
+<option value="Selected">
+Selected
+</option>
+
+<option value="Rejected">
+Rejected
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="btn-primary">
+
+Create Application
+
+</button>
+
+</form>
+
+</div>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Applications Management</title>
@@ -92,52 +157,7 @@ Admin
 </tr>
 </thead>
 
-<tbody>
-
-<tr>
-<td>Rupesh Kakde</td>
-<td>Node.js Developer</td>
-<td>TCS</td>
-<td>
-<span class="status selected">
-Selected
-</span>
-</td>
-</tr>
-
-<tr>
-<td>Rahul Patil</td>
-<td>Frontend Developer</td>
-<td>Infosys</td>
-<td>
-<span class="status shortlist">
-Shortlisted
-</span>
-</td>
-</tr>
-
-<tr>
-<td>Sneha More</td>
-<td>Java Developer</td>
-<td>Wipro</td>
-<td>
-<span class="status pending">
-Applied
-</span>
-</td>
-</tr>
-
-<tr>
-<td>Amit Shinde</td>
-<td>Python Developer</td>
-<td>Capgemini</td>
-<td>
-<span class="status rejected">
-Rejected
-</span>
-</td>
-</tr>
-
+<tbody id="applicationTableBody">
 </tbody>
 
 </table>
@@ -150,5 +170,6 @@ Rejected
 
 <script src="js/auth.js"></script>
 <script src="js/protect.js"></script>
+<script src="js/applications.js"></script>
 </body>
 </html>

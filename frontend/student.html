@@ -81,33 +81,53 @@ Admin
 
 <h2>Add Student</h2>
 
-<form>
+<form id="studentForm">
 
 <div class="form-grid">
 
 <div class="form-group">
 <label>Student Name</label>
-<input type="text" placeholder="Enter Name">
+<input
+type="text"
+id="studentName"
+placeholder="Enter Name"
+required>
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input type="email" placeholder="Enter Email">
+<input
+type="email"
+id="studentEmail"
+placeholder="Enter Email"
+required>
 </div>
 
 <div class="form-group">
 <label>Skills</label>
-<input type="text" placeholder="Java, Python, React">
+<input
+type="text"
+id="studentSkills"
+placeholder="Java, Python, React"
+required>
 </div>
 
 <div class="form-group">
 <label>CGPA</label>
-<input type="number" placeholder="Enter CGPA">
+<input
+type="number"
+id="studentCGPA"
+placeholder="Enter CGPA"
+required>
 </div>
 
 <div class="form-group full-width">
 <label>Resume URL</label>
-<input type="text" placeholder="Resume Link">
+<input
+type="text"
+id="studentResume"
+placeholder="Resume Link"
+required>
 </div>
 
 </div>
@@ -135,22 +155,7 @@ Save Student
 </tr>
 </thead>
 
-<tbody>
-
-<tr>
-<td>Rupesh Kakde</td>
-<td>rupesh@gmail.com</td>
-<td>Node.js, MongoDB</td>
-<td>8.8</td>
-</tr>
-
-<tr>
-<td>Rahul Patil</td>
-<td>rahul@gmail.com</td>
-<td>Java, Spring</td>
-<td>8.5</td>
-</tr>
-
+<tbody id="studentTableBody">
 </tbody>
 
 </table>
@@ -163,5 +168,7 @@ Save Student
 
 
 <script src="js/auth.js"></script>
-<script src="js/protect.js"></script></body>
+<script src="js/protect.js"></script>
+<script src="js/student.js"></script>
+</body>
 </html>

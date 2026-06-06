@@ -81,28 +81,28 @@ Admin
 
 <h2>Add Company</h2>
 
-<form>
+<form id="companyForm">
 
 <div class="form-grid">
 
 <div class="form-group">
 <label>Company Name</label>
-<input type="text" placeholder="Enter Company Name">
+<input type="text" id="companyName" required>
 </div>
 
 <div class="form-group">
 <label>Website</label>
-<input type="text" placeholder="https://company.com">
+<input type="text" id="companyWebsite" required>
 </div>
 
 <div class="form-group">
 <label>Sector</label>
-<input type="text" placeholder="IT Services">
+<input type="text" id="companySector" required>
 </div>
 
 <div class="form-group">
 <label>Contact Email</label>
-<input type="email" placeholder="hr@company.com">
+<input type="email" id="companyEmail" required>
 </div>
 
 </div>
@@ -130,22 +130,7 @@ Save Company
 </tr>
 </thead>
 
-<tbody>
-
-<tr>
-<td>TCS</td>
-<td>www.tcs.com</td>
-<td>IT Services</td>
-<td>hr@tcs.com</td>
-</tr>
-
-<tr>
-<td>Infosys</td>
-<td>www.infosys.com</td>
-<td>Software</td>
-<td>careers@infosys.com</td>
-</tr>
-
+<tbody id="companyTableBody">
 </tbody>
 
 </table>
@@ -158,5 +143,6 @@ Save Company
 
 <script src="js/auth.js"></script>
 <script src="js/protect.js"></script>
+<script src="js/company.js"></script>
 </body>
 </html>
