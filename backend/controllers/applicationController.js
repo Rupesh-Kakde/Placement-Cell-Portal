@@ -20,20 +20,32 @@ const createApplication = async (req, res) => {
 // Get All Applications
 const getApplications = async (req, res) => {
     try {
-        const applications = await Application.find()
-            .populate("studentId")
-            .populate("jobId");
+
+        const applications =
+        await Application.find()
+
+        .populate("studentId")
+
+        .populate({
+            path: "jobId",
+            populate: {
+                path: "companyId"
+            }
+        });
 
         res.status(200).json({
             success: true,
             count: applications.length,
             data: applications
         });
+
     } catch (error) {
+
         res.status(500).json({
             success: false,
             message: error.message
         });
+
     }
 };
 

@@ -1,11 +1,67 @@
 const JOB_API_URL =
 "http://localhost:5000/api/jobs";
 
+const COMPANY_API_URL =
+"http://localhost:5000/api/companies";
+
 const jobForm =
 document.getElementById("jobForm");
 
 const jobTableBody =
 document.getElementById("jobTableBody");
+
+
+// Load Companies Dropdown
+
+async function loadCompanies() {
+
+    try {
+
+        const token =
+        localStorage.getItem("token");
+
+        const response =
+        await fetch(
+            COMPANY_API_URL,
+            {
+                headers:{
+                    Authorization:
+                    `Bearer ${token}`
+                }
+            }
+        );
+
+        const result =
+        await response.json();
+
+        const companySelect =
+        document.getElementById(
+            "jobCompany"
+        );
+
+        companySelect.innerHTML =
+        `<option value="">
+            Select Company
+        </option>`;
+
+        result.data.forEach(company => {
+
+            companySelect.innerHTML += `
+                <option value="${company._id}">
+                    ${company.companyName}
+                </option>
+            `;
+
+        });
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
 
 
 // Load Jobs
@@ -18,14 +74,22 @@ async function loadJobs() {
         localStorage.getItem("token");
 
         const response =
-        await fetch(JOB_API_URL,{
-            headers:{
-                Authorization:`Bearer ${token}`
+        await fetch(
+            JOB_API_URL,
+            {
+                headers:{
+                    Authorization:
+                    `Bearer ${token}`
+                }
             }
-        });
+        );
 
         const result =
-        await response.json();
+await response.json();
+
+console.log("JOBS DATA:", result.data);
+
+// console.log("JOBS DATA:", result.data);
 
         jobTableBody.innerHTML = "";
 
@@ -35,10 +99,27 @@ async function loadJobs() {
             document.createElement("tr");
 
             row.innerHTML = `
-                <td>${job.title}</td>
-                <td>${job.skills.join(", ")}</td>
-                <td>${job.package} LPA</td>
-                <td>${new Date(job.deadline).toLocaleDateString()}</td>
+                <td>
+                ${job.companyId?.companyName || "N/A"}
+                </td>
+
+                <td>
+                ${job.title}
+                </td>
+
+                <td>
+                ${job.skills.join(", ")}
+                </td>
+
+                <td>
+                ${job.package} LPA
+                </td>
+
+                <td>
+                ${new Date(
+                    job.deadline
+                ).toLocaleDateString()}
+                </td>
             `;
 
             jobTableBody.appendChild(row);
@@ -59,7 +140,7 @@ async function loadJobs() {
 
 jobForm.addEventListener(
 "submit",
-async(e)=>{
+async (e)=>{
 
 e.preventDefault();
 
@@ -71,6 +152,11 @@ const jobData = {
 title:
 document.getElementById(
 "jobTitle"
+).value,
+
+companyId:
+document.getElementById(
+"jobCompany"
 ).value,
 
 skills:
@@ -123,4 +209,8 @@ console.log(error);
 
 });
 
+
+// Initial Load
+
+loadCompanies();
 loadJobs();

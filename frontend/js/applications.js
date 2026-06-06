@@ -1,67 +1,164 @@
+const STUDENT_API_URL =
+"http://localhost:5000/api/students";
+
+const JOB_API_URL =
+"http://localhost:5000/api/jobs";
+
 const APPLICATION_API_URL =
 "http://localhost:5000/api/applications";
 
 const applicationForm =
-document.getElementById(
-"applicationForm"
-);
+document.getElementById("applicationForm");
 
 const applicationTableBody =
-document.getElementById(
-"applicationTableBody"
-);
+document.getElementById("applicationTableBody");
+
+
+// Load Students Dropdown
+
+async function loadStudents() {
+
+    try {
+
+        const token =
+        localStorage.getItem("token");
+
+        const response =
+        await fetch(
+            STUDENT_API_URL,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        const result =
+        await response.json();
+
+        const studentSelect =
+        document.getElementById("studentId");
+
+        studentSelect.innerHTML =
+        '<option value="">Select Student</option>';
+
+        result.data.forEach(student => {
+
+            studentSelect.innerHTML += `
+                <option value="${student._id}">
+                    ${student.name}
+                </option>
+            `;
+
+        });
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+
+// Load Jobs Dropdown
+
+async function loadJobs() {
+
+    try {
+
+        const token =
+        localStorage.getItem("token");
+
+        const response =
+        await fetch(
+            JOB_API_URL,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        const result =
+        await response.json();
+
+        const jobSelect =
+        document.getElementById("jobId");
+
+        jobSelect.innerHTML =
+        '<option value="">Select Job</option>';
+
+        result.data.forEach(job => {
+
+            jobSelect.innerHTML += `
+                <option value="${job._id}">
+                    ${job.title}
+                </option>
+            `;
+
+        });
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
 
 
 // Load Applications
 
-async function loadApplications(){
+async function loadApplications() {
 
-try{
+    try {
 
-const token =
-localStorage.getItem("token");
+        const token =
+        localStorage.getItem("token");
 
-const response =
-await fetch(
-APPLICATION_API_URL,
-{
-headers:{
-Authorization:
-`Bearer ${token}`
-}
-}
-);
+        const response =
+        await fetch(
+            APPLICATION_API_URL,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
 
-const result =
-await response.json();
+        const result =
+        await response.json();
 
-applicationTableBody.innerHTML = "";
+        applicationTableBody.innerHTML = "";
 
-result.data.forEach(app=>{
+        result.data.forEach(app => {
 
-const row =
-document.createElement("tr");
+            const row =
+            document.createElement("tr");
 
-row.innerHTML = `
-<td>${app.studentId}</td>
-<td>${app.jobId}</td>
-<td>
-<span class="status pending">
-${app.status}
-</span>
-</td>
-`;
+            row.innerHTML = `
+                <td>${app.studentId?.name || "N/A"}</td>
+                <td>${app.jobId?.title || "N/A"}</td>
+                <td>
+                    <span class="status pending">
+                        ${app.status}
+                    </span>
+                </td>
+            `;
 
-applicationTableBody.appendChild(row);
+            applicationTableBody.appendChild(row);
 
-});
+        });
 
-}
-catch(error){
+    }
+    catch(error){
 
-console.log(error);
+        console.log(error);
 
-}
+    }
 
 }
 
@@ -70,65 +167,70 @@ console.log(error);
 
 applicationForm.addEventListener(
 "submit",
-async(e)=>{
+async (e) => {
 
-e.preventDefault();
+    e.preventDefault();
 
-const token =
-localStorage.getItem("token");
+    const token =
+    localStorage.getItem("token");
 
-const applicationData = {
+    const applicationData = {
 
-studentId:
-document.getElementById(
-"studentId"
-).value,
+        studentId:
+        document.getElementById(
+        "studentId"
+        ).value,
 
-jobId:
-document.getElementById(
-"jobId"
-).value,
+        jobId:
+        document.getElementById(
+        "jobId"
+        ).value,
 
-status:
-document.getElementById(
-"applicationStatus"
-).value
+        status:
+        document.getElementById(
+        "applicationStatus"
+        ).value
 
-};
+    };
 
-try{
+    try {
 
-await fetch(
-APPLICATION_API_URL,
-{
-method:"POST",
+        await fetch(
+            APPLICATION_API_URL,
+            {
+                method: "POST",
 
-headers:{
-"Content-Type":
-"application/json",
+                headers: {
+                    "Content-Type":
+                    "application/json",
 
-Authorization:
-`Bearer ${token}`
-},
+                    Authorization:
+                    `Bearer ${token}`
+                },
 
-body:
-JSON.stringify(
-applicationData
-)
-}
-);
+                body:
+                JSON.stringify(
+                    applicationData
+                )
+            }
+        );
 
-applicationForm.reset();
+        applicationForm.reset();
 
-loadApplications();
+        loadApplications();
 
-}
-catch(error){
+    }
+    catch(error){
 
-console.log(error);
+        console.log(error);
 
-}
+    }
 
 });
 
+
+// Initial Load
+
+loadStudents();
+loadJobs();
 loadApplications();

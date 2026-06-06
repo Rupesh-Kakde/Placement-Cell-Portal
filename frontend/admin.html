@@ -81,25 +81,25 @@ Admin
 
 <div class="card">
 <i class="fas fa-user-graduate"></i>
-<h2>120</h2>
+<h2 id="studentCount">0</h2>
 <p>Total Students</p>
 </div>
 
 <div class="card">
 <i class="fas fa-building"></i>
-<h2>35</h2>
+<h2 id="companyCount">0</h2>
 <p>Total Companies</p>
 </div>
 
 <div class="card">
 <i class="fas fa-briefcase"></i>
-<h2>50</h2>
+<h2 id="jobCount">0</h2>
 <p>Active Jobs</p>
 </div>
 
 <div class="card">
 <i class="fas fa-file-signature"></i>
-<h2>210</h2>
+<h2 id="applicationCount">0</h2>
 <p>Applications</p>
 </div>
 
@@ -109,25 +109,25 @@ Admin
 
 <div class="card">
 <i class="fas fa-check-circle"></i>
-<h2>65</h2>
+<h2 id="selectedCount">0</h2>
 <p>Selected Students</p>
 </div>
 
 <div class="card">
 <i class="fas fa-list-check"></i>
-<h2>90</h2>
+<h2 id="shortlistCount">0</h2>
 <p>Shortlisted</p>
 </div>
 
 <div class="card">
 <i class="fas fa-clock"></i>
-<h2>45</h2>
+<h2 id="pendingCount">0</h2>
 <p>Pending</p>
 </div>
 
 <div class="card">
 <i class="fas fa-times-circle"></i>
-<h2>10</h2>
+<h2 id="rejectedCount">0</h2>
 <p>Rejected</p>
 </div>
 
@@ -143,42 +143,12 @@ Admin
 <tr>
 <th>Student</th>
 <th>Company</th>
+<th>Job Role</th>
 <th>Status</th>
 </tr>
 </thead>
 
-<tbody>
-
-<tr>
-<td>Rupesh Kakde</td>
-<td>TCS</td>
-<td>
-<span class="status selected">
-Selected
-</span>
-</td>
-</tr>
-
-<tr>
-<td>Rahul Patil</td>
-<td>Infosys</td>
-<td>
-<span class="status shortlist">
-Shortlisted
-</span>
-</td>
-</tr>
-
-<tr>
-<td>Sneha More</td>
-<td>Wipro</td>
-<td>
-<span class="status pending">
-Applied
-</span>
-</td>
-</tr>
-
+<tbody id="activityTableBody">
 </tbody>
 
 </table>
@@ -191,5 +161,6 @@ Applied
 
 <script src="js/auth.js"></script>
 <script src="js/protect.js"></script>
+<script src="js/admin.js"></script>
 </body>
 </html>
