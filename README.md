@@ -213,11 +213,83 @@ Placement Cell Portal Successfully Completed and Fully Functional.
 
 Project Ready for Demonstration, GitHub Submission, and OJT Internship Evaluation.
 
-## Week 3 - Day 1: Production Readiness Review
 
-- Reviewed the project structure.
-- Verified local frontend and backend execution.
-- Confirmed use of environment variables for configuration.
-- Identified hardcoded localhost API URLs for future deployment updates.
-- Added .gitignore to exclude unnecessary files from version control.
-- Planned production deployment tasks for upcoming phases.
+
+
+# Week 3 – Cloud Deployment, DevOps & Security
+
+## Day 1 – Production Readiness Review
+
+### Tasks Completed
+
+* Reviewed the project structure for deployment readiness.
+* Verified backend environment configuration.
+* Created and configured the `.gitignore` file.
+* Identified hardcoded localhost API URLs for production updates.
+* Confirmed that the project was running successfully in the local environment.
+
+### Outcome
+
+The project was prepared for cloud deployment by reviewing configuration files and identifying production-related changes.
+
+---
+
+## Day 2 – Cloud Deployment Setup
+
+### Tasks Completed
+
+* Successfully deployed the frontend application on Vercel.
+* Created a MongoDB Atlas cluster and configured database access.
+* Configured environment variables for cloud deployment.
+* Deployed the backend application on Render.
+* Updated frontend API endpoints to communicate with the deployed backend.
+* Verified successful communication between frontend, backend, and database.
+
+### Outcome
+
+The Placement Cell Portal became accessible through live cloud-hosted services with a working backend and cloud database.
+
+---
+
+## Day 3 – Security Configuration
+
+### Tasks Completed
+
+* Updated CORS configuration to allow requests only from the production frontend.
+* Verified secure communication between frontend and backend.
+* Confirmed successful API connectivity after security configuration.
+* Performed functional testing for login and dashboard modules.
+
+### Outcome
+
+The application was secured with production-ready CORS settings while maintaining full functionality.
+
+---
+
+## Day 4 – Testing and Validation
+
+### Tasks Completed
+
+* Performed end-to-end testing of the deployed application.
+* Verified login, registration, dashboard, jobs, and application modules.
+* Tested backend API responses using the deployed environment.
+* Confirmed MongoDB Atlas data connectivity and application stability.
+
+### Outcome
+
+The deployed application was validated successfully with all major features working as expected.
+
+---
+
+## Day 5 – CI/CD and Documentation
+
+### Tasks Completed
+
+* Configured GitHub Actions for Continuous Integration (CI).
+* Added an automated workflow to install backend dependencies on every push.
+* Updated deployment documentation and project configuration.
+* Collected deployment evidence and verified successful workflow execution.
+
+### Outcome
+
+The project was enhanced with basic CI automation and finalized with production deployment documentation and testing.
