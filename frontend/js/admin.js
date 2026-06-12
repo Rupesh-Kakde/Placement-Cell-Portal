@@ -1,5 +1,4 @@
-const BASE_URL =
-"http://localhost:5000/api";
+const BASE_URL = "https://placement-cell-portal-dkwr.onrender.com/api";
 
 async function loadAdminAnalytics() {
 

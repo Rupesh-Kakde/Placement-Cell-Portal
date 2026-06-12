@@ -1,11 +1,10 @@
 const STUDENT_API_URL =
-"http://localhost:5000/api/students";
-
+"https://placement-cell-portal-dkwr.onrender.com/api/students";
 const JOB_API_URL =
-"http://localhost:5000/api/jobs";
+"https://placement-cell-portal-dkwr.onrender.com/api/jobs";
 
 const APPLICATION_API_URL =
-"http://localhost:5000/api/applications";
+"https://placement-cell-portal-dkwr.onrender.com/api/applications";
 
 const applicationForm =
 document.getElementById("applicationForm");

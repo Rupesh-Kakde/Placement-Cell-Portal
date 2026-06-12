@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:5000/api/auth";
+// const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://placement-cell-portal-dkwr.onrender.com/api/auth";
 
 // REGISTER
 

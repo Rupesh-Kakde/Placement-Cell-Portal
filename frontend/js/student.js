@@ -1,5 +1,5 @@
 
-const STUDENT_API_URL = "http://localhost:5000/api/students";
+const STUDENT_API_URL = "https://placement-cell-portal-dkwr.onrender.com/api/students";
 
 const studentForm =
 document.getElementById("studentForm");

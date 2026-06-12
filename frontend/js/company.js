@@ -1,5 +1,5 @@
 const COMPANY_API_URL =
-"http://localhost:5000/api/companies";
+"https://placement-cell-portal-dkwr.onrender.com/api/companies";
 
 const companyForm =
 document.getElementById("companyForm");
