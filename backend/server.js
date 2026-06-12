@@ -17,7 +17,11 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://placement-cell-portal-ten.vercel.app",
+    credentials: true
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
