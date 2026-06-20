@@ -243,11 +243,16 @@ outline:none;
     border-radius:10px;
     cursor:pointer;
     font-size:16px;
-    }
+    transition:0.3s;
+}
 
-    .btn-primary:hover{
+.btn-primary:hover{
     background:#1d4ed8;
-    }
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(37,99,235,0.3);
+}
+    
+    
 
     @media(max-width:768px){
 

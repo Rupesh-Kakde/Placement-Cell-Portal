@@ -9,17 +9,24 @@ try {
     const student = await Student.findById(studentId);
 
     if (!student) {
-        return res.status(404).json({
-            success: false,
-            message: "Student not found"
-        });
-    }
+
+    console.log("Student Not Found. ID:", studentId);
+
+    return res.status(404).json({
+        success: false,
+        message: "Student not found"
+    });
+}
+
+console.log("Student Found:", student);
 
     const studentSkills = student.skills.map(
         skill => skill.toLowerCase().trim()
     );
 
     const jobs = await Job.find();
+
+    console.log("Jobs Found:", jobs);
 
     const recommendations = jobs
     .map(job => {
@@ -38,6 +45,10 @@ try {
             )
             : 0;
 
+            console.log("Student Skills:", studentSkills);
+console.log("Job Skills:", requiredSkills);
+console.log("Matched Skills:", matchedSkills);
+console.log("Score:", score);
         return {
             jobId: job._id,
             jobTitle: job.title,
@@ -46,9 +57,9 @@ try {
         };
     })
 
-    .filter(job => job.score > 0)
+   // .filter(job => job.score > 0)
 
-    .sort((a, b) => b.score - a.score);
+   // .sort((a, b) => b.score - a.score);
 
 
 

@@ -73,6 +73,8 @@ async function loadStudents() {
         const token =
         localStorage.getItem("token");
 
+console.log("Token:", token);
+
         const response =
         await fetch(STUDENT_API_URL, {
         headers: {
@@ -84,6 +86,10 @@ async function loadStudents() {
     await response.json();
 
     console.log("Students API Response:", result);
+    console.log(result);
+alert(JSON.stringify(result));
+
+
 
         studentTableBody.innerHTML = "";
         console.log("Student Table Body:", studentTableBody);
@@ -101,11 +107,12 @@ async function loadStudents() {
     <td>${student.cgpa}</td>
 
     <td>
-        <button
-        onclick="loadRecommendations('${student._id}')">
-        View Recommendations
-        </button>
-    </td>
+    <button
+    class="btn-primary"
+    onclick="loadRecommendations('${student._id}')">
+    View Recommendations
+    </button>
+</td>
 `;
 
     studentTableBody.appendChild(row);
@@ -198,3 +205,5 @@ console.log(error);
 });
 
 loadStudents();
+
+window.loadRecommendations = loadRecommendations;
