@@ -57,9 +57,9 @@ console.log("Score:", score);
         };
     })
 
-   // .filter(job => job.score > 0)
+    .filter(job => job.score > 0)
 
-   // .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.score - a.score);
 
 
 
