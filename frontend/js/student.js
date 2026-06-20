@@ -6,7 +6,63 @@ document.getElementById("studentForm");
 
 const studentTableBody =
 document.getElementById("studentTableBody");
+const RECOMMENDATION_API_URL =
+"https://placement-cell-portal-dkwr.onrender.com/api/recommendations";
 
+const recommendationContainer =
+document.getElementById(
+"recommendationContainer"
+);
+
+async function loadRecommendations(studentId) {
+
+    try {
+
+        const response =
+        await fetch(
+        `${RECOMMENDATION_API_URL}/${studentId}`
+        );
+
+        const result =
+        await response.json();
+
+        recommendationContainer.innerHTML = "";
+
+        if (
+            !result.recommendations ||
+            result.recommendations.length === 0
+        ) {
+
+            recommendationContainer.innerHTML =
+            "<p>No recommended jobs found</p>";
+
+            return;
+        }
+
+        result.recommendations.forEach(job => {
+
+            const card =
+            document.createElement("div");
+
+            card.innerHTML = `
+                <h3>${job.jobTitle}</h3>
+                <p><strong>Match Score:</strong> ${job.score}%</p>
+                <p><strong>Matched Skills:</strong>
+                ${job.matchedSkills.join(", ")}</p>
+                <hr>
+            `;
+
+            recommendationContainer.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+}
 
 // Load Students
 
@@ -38,12 +94,19 @@ async function loadStudents() {
     const row =
     document.createElement("tr");
 
-    row.innerHTML = `
-        <td>${student.name}</td>
-        <td>${student.email}</td>
-        <td>${student.skills.join(", ")}</td>
-        <td>${student.cgpa}</td>
-    `;
+   row.innerHTML = `
+    <td>${student.name}</td>
+    <td>${student.email}</td>
+    <td>${student.skills.join(", ")}</td>
+    <td>${student.cgpa}</td>
+
+    <td>
+        <button
+        onclick="loadRecommendations('${student._id}')">
+        View Recommendations
+        </button>
+    </td>
+`;
 
     studentTableBody.appendChild(row);
 
